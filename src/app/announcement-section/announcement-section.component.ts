@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'announcement-section',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnnouncementSectionComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) {}
 
   ngOnInit() {
   }
 
+  gotoDetail(): void {
+    this.router.navigate(['/announce']);
+  }
 }

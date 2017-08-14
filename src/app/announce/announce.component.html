@@ -1,0 +1,30 @@
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>제목</th>
+      <th>작성자</th>
+      <th>조회수</th>
+      <th>추천수</th>
+      <th>작성일</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let announce of announces" [class.selected]="announce === selectAnnounce" (click)="onSelect(announce)">
+        <td>{{announce.post_seq}}</td>
+        <td>
+          <button (click)="DetailAnnounce()">{{announce.title}}</button>
+        </td>
+        <td>{{announce.writer}}</td>
+        <td>{{announce.hps}}</td>
+        <td>{{announce.recommend_num}}</td>
+        <td>{{announce.date_formatted}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <button (click)="RegistAnnounce()">Go to Registration Page</button>
+</div>

@@ -8,7 +8,20 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { TransportationSectionComponent } from './transportation-section/transportation-section.component';
 import { StreamchatSectionComponent } from './streamchat-section/streamchat-section.component';
 import { WeatherSectionComponent } from './weather-section/weather-section.component';
-import {RouterModule} from "@angular/router";
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {AppRoutingModule} from "./app-routing.module";
+import {IsrealService} from "./service/IsrealService";
+import {CommonModule, HashLocationStrategy, LocationStrategy} from "@angular/common";
+import { SelectSectionComponent } from './select-section/select-section.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { AnnounceComponent } from './announce/announce.component';
+import { BbsFullComponent } from './bbs-full/bbs-full.component';
+import { MainMountainComponent } from './main-mountain/main-mountain.component';
+import {AgmCoreModule} from "@agm/core";
+import { FooterSectionComponent } from './footer-section/footer-section.component';
+import { AnnounceDetailComponent } from './announce-detail/announce-detail.component';
+import { AnnounceRegistComponent } from './announce-regist/announce-regist.component';
 
 @NgModule({
   declarations: [
@@ -18,22 +31,34 @@ import {RouterModule} from "@angular/router";
     NavbarComponent,
     TransportationSectionComponent,
     StreamchatSectionComponent,
-    WeatherSectionComponent
+    WeatherSectionComponent,
+    SelectSectionComponent,
+    CarouselComponent,
+    AnnounceComponent,
+    BbsFullComponent,
+    MainMountainComponent,
+    FooterSectionComponent,
+    AnnounceDetailComponent,
+    AnnounceRegistComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      {
-        path: 'transportation-section',
-        component: TransportationSectionComponent
-      },
-      {
-        path: 'weather-section',
-        component: WeatherSectionComponent
-      }
-    ])
+    FormsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    CommonModule,
+    // apiKey 입력
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyDJSbb2a2svPrxhkR9w_3RyP6YsTI9tsJc"
+    })
   ],
-  providers: [],
+  providers: [
+    IsrealService,
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
