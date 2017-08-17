@@ -1,0 +1,10 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+  <div>Title : <input type="text" name="title" ngModel></div>
+  <div>Writer : <input type="text" name="writer" ngModel></div>
+  <div>Contents : <input type="text" name="contents" ngModel></div>
+  <nav>
+    <button type="submit" style="float: right">Registration</button>
+    <button routerLink="/announce" style="float: right; margin-right: 10px;">Go Back</button>
+  </nav>
+
+</form>

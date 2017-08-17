@@ -8,8 +8,8 @@ import {WeatherSectionComponent} from "./weather-section/weather-section.compone
 import {AnnounceComponent} from "./announce/announce.component";
 import {BbsFullComponent} from "./bbs-full/bbs-full.component";
 import {MainMountainComponent} from "./main-mountain/main-mountain.component";
-import {AnnounceDetailComponent} from "./announce-detail/announce-detail.component";
-import {AnnounceRegistComponent} from "./announce-regist/announce-regist.component";
+import {AnnounceDetailComponent} from "./announce/announce-detail/announce-detail.component";
+import {AnnounceRegistComponent} from "./announce/announce-regist/announce-regist.component";
 
 const routes: Routes = [
   {
@@ -38,12 +38,12 @@ const routes: Routes = [
     component: MainMountainComponent
   },
   {
-    path: 'announce/:post_seq',
-    component: AnnounceDetailComponent
-  },
-  {
     path: 'announce/regist',
     component: AnnounceRegistComponent
+  },
+  {
+    path: 'announce/:post_seq',
+    component: AnnounceDetailComponent
   }
 ];
 

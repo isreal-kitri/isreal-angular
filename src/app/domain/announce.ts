@@ -5,4 +5,5 @@ export class Announce {
   hps: number;
   recommend_num: number;
   date_formatted: string;
+  contents: string;
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Location} from "@angular/common";
-import {Announce} from "../domain/announce";
-import {IsrealService} from "../service/IsrealService";
+import {Announce} from "../../domain/announce";
+import {IsrealService} from "../../service/IsrealService";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -21,11 +21,7 @@ export class AnnounceDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.isrealService.getAnnounce(this.route.snapshot.params['post_seq']).subscribe(data => {
-      this.announce = data;
+        this.announce = data;
     });
-  }
-
-  goBack(): void {
-    this.location.back();
   }
 }

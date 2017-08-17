@@ -6,6 +6,9 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
 import {Announce} from "../domain/announce";
 
+import "rxjs/add/operator/map";
+import "rxjs/add/operator/catch";
+
 @Injectable()
 export class IsrealService {
 
@@ -20,4 +23,17 @@ export class IsrealService {
   getAnnounce(post_seq: number): Observable<Announce> {
     return this.http.get("http://localhost:8080/announce/" + post_seq);
   }
+
+  // 3. 공지 글 쓰기
+  addAnnounce(announce: any): Observable<any> {
+    console.log(announce + "check");
+    return this.http.post("http://localhost:8080/announce", announce);
+    //console.log(announce + "transmission check");
+  }
+
+  private errorHandler(error: Response) {
+    console.error("Error Occured: " + error);
+    return Observable.throw(error || "Some Error on Server Occured");
+  }
+
 }
