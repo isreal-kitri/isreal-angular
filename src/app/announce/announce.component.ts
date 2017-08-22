@@ -14,20 +14,17 @@ export class AnnounceComponent implements OnInit {
   selectedAnnounce: Announce;
 
   constructor(
-    private isrealServece: IsrealService,
+    private isrealService: IsrealService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.isrealServece.getAnnounces()
+    this.isrealService.getAnnounces()
       .subscribe(data => this.announces= data);
   }
 
-  onSelect(announce: Announce): void {
+  DetailAnnounce(announce: Announce): void {
     this.selectedAnnounce = announce;
-  }
-
-  DetailAnnounce(): void {
     this.router.navigate(['/announce', this.selectedAnnounce.post_seq]);
   }
 

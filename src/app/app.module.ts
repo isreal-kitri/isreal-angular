@@ -22,6 +22,8 @@ import {AgmCoreModule} from "@agm/core";
 import { FooterSectionComponent } from './footer-section/footer-section.component';
 import { AnnounceDetailComponent } from './announce/announce-detail/announce-detail.component';
 import { AnnounceRegistComponent } from './announce/announce-regist/announce-regist.component';
+import { MtGraphComponent } from './mt-graph/mt-graph.component';
+import { MountainDetailComponent } from './main-mountain/mountain-detail/mountain-detail.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { AnnounceRegistComponent } from './announce/announce-regist/announce-reg
     MainMountainComponent,
     FooterSectionComponent,
     AnnounceDetailComponent,
-    AnnounceRegistComponent
+    AnnounceRegistComponent,
+    MtGraphComponent,
+    MountainDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,7 @@ import { AnnounceRegistComponent } from './announce/announce-regist/announce-reg
     CommonModule,
     // apiKey 입력
     AgmCoreModule.forRoot({
-      apiKey: "AIzaSyDJSbb2a2svPrxhkR9w_3RyP6YsTI9tsJc"
+      apiKey: 'AIzaSyDQW0wEvwnxAp0wfcsXRyRcOmV70lVgUzA'
     })
   ],
   providers: [

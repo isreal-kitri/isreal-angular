@@ -6564,7 +6564,8 @@ a.thumbnail image {
 }
 
 .top-bar, .top-bar ul {
-  background-color: #e6e6e6
+  /*background-color: #e6e6e6*/
+  background-color: #4d2926;
 }
 
 .top-bar input {

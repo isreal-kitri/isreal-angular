@@ -11,10 +11,10 @@
     </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let announce of announces" [class.selected]="announce === selectAnnounce" (click)="onSelect(announce)">
+      <tr *ngFor="let announce of announces" [class.selected]="announce === selectAnnounce">
         <td>{{announce.post_seq}}</td>
         <td>
-          <button (click)="DetailAnnounce()">{{announce.title}}</button>
+          <button (click)="DetailAnnounce(announce)">{{announce.title}}</button>
         </td>
         <td>{{announce.writer}}</td>
         <td>{{announce.hps}}</td>

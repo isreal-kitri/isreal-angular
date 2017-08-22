@@ -1,4 +1,28 @@
 <div>
-  <button (click)="gotoDetail()">공지사항</button>
+  <div style="text-align: center">
+    <button (click)="gotoDetail()"><a>공지사항</a></button>
+  </div>
+
+  <div style="font-size: 13px;">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>제목</th>
+          <th>작성자</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let element of announces">
+        <tr>
+          <td>{{element.post_seq}}</td>
+          <td>{{element.title}}</td>
+          <td>{{element.writer}}</td>
+          <td>[{{element.hps}}]</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-<p><img src="https://placehold.it/400x200&text=Other cool article" alt="article promo image" alt="advertisement for deep fried Twinkies"></p>
+
+<!--<p><img src="https://placehold.it/400x200&text=Other cool article" alt="article promo image" alt="advertisement for deep fried Twinkies"></p>-->

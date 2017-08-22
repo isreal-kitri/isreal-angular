@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {IsrealService} from "../../service/IsrealService";
 import {ActivatedRoute} from "@angular/router";
+import {Location} from '@angular/common';
 import {Announce} from "../../domain/announce";
 
 @Component({
@@ -14,7 +15,8 @@ export class AnnounceRegistComponent implements OnInit {
 
   constructor(
     private isrealService: IsrealService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
   ) { }
 
   ngOnInit() {
@@ -23,6 +25,7 @@ export class AnnounceRegistComponent implements OnInit {
   onSubmit(formValue : any): void {
     console.log(formValue);
     this.isrealService.addAnnounce(formValue).subscribe();
+    this.location.back();
   }
 
 }

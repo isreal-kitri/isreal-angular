@@ -26,9 +26,13 @@ export class IsrealService {
 
   // 3. 공지 글 쓰기
   addAnnounce(announce: any): Observable<any> {
-    console.log(announce + "check");
-    return this.http.post("http://localhost:8080/announce", announce);
+    return this.http.post("http://localhost:8080/announce/regist", announce);
     //console.log(announce + "transmission check");
+  }
+
+  // 4. 조회수 기준 Top4 공지사항 목록 가져오기
+  getTop4Announces(): Observable<Announce[]> {
+    return this.http.get("http://localhost:8080/announce/top4");
   }
 
   private errorHandler(error: Response) {

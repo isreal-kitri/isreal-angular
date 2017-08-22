@@ -15,8 +15,7 @@ export class AnnounceDetailComponent implements OnInit {
 
   constructor(
     private isrealService: IsrealService,
-    private route: ActivatedRoute,
-    private location: Location
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
