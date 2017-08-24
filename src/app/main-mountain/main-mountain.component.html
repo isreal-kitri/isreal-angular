@@ -9,22 +9,23 @@
                [longitude]="m.lng"
                [label]="m.label"
                [markerDraggable]="m.draggable"
-               (markerClick)="clickedMarker(m, i); gm.lastOpen?.close(); gm.lastOpen = infoWindow">
-    <agm-info-window #infoWindow>
-      <div *ngIf="sampleMt">
-        <ul>
-          <li><h3><strong>{{sampleMt.mount_name}}</strong></h3></li>
-          <hr>
-          <li><strong>높이(m):  </strong>{{sampleMt.altitude}}</li>
-          <hr>
-          <li><strong>특징:  </strong>{{sampleMt.top100_fm_sel_reason}}</li>
-          <hr>
-          <li><strong>정보:  </strong>{{sampleMt.mnt_infor}}</li>
-          <hr>
-          <li><strong>교통 수단:  </strong>{{sampleMt.transport}}</li>
-        </ul>
-      </div>
-    </agm-info-window>
+               (markerClick)="clickedMarker(m, i);">
+               <!--(markerClick)="clickedMarker(m, i); gm.lastOpen?.close(); gm.lastOpen = infoWindow">-->
+    <!--<agm-info-window #infoWindow>-->
+      <!--<div *ngIf="sampleMt">-->
+        <!--<ul>-->
+          <!--<li><h3><strong>{{sampleMt.mount_name}}</strong></h3></li>-->
+          <!--<hr>-->
+          <!--<li><strong>높이(m):  </strong>{{sampleMt.altitude}}</li>-->
+          <!--<hr>-->
+          <!--<li><strong>특징:  </strong>{{sampleMt.top100_fm_sel_reason}}</li>-->
+          <!--<hr>-->
+          <!--<li><strong>정보:  </strong>{{sampleMt.mnt_infor}}</li>-->
+          <!--<hr>-->
+          <!--<li><strong>교통 수단:  </strong>{{sampleMt.transport}}</li>-->
+        <!--</ul>-->
+      <!--</div>-->
+    <!--</agm-info-window>-->
   </agm-marker>
 
 </agm-map>

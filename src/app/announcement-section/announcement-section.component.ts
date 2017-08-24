@@ -11,6 +11,7 @@ import {IsrealService} from "../service/IsrealService";
 export class AnnouncementSectionComponent implements OnInit {
 
   announces: Announce[];
+  selectedAnnounce: Announce;
 
   constructor(
     private isrealService: IsrealService,
@@ -25,5 +26,10 @@ export class AnnouncementSectionComponent implements OnInit {
 
   gotoDetail(): void {
     this.router.navigate(['/announce']);
+  }
+
+  DetailAnnounce(announce: Announce): void {
+    this.selectedAnnounce = announce;
+    this.router.navigate(['/announce', this.selectedAnnounce.post_seq]);
   }
 }

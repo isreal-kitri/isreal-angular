@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Location} from '@angular/common';
 import {LatLngLiteral} from "@agm/core";
+import {IsrealService} from "app/service/IsrealService";
+import {MountainInfo} from "../../domain/MountainInfo";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'mountain-detail',
@@ -10,15 +13,23 @@ import {LatLngLiteral} from "@agm/core";
 export class MountainDetailComponent implements OnInit {
 
   tempParam: number;
+  mountainInfo: MountainInfo;
+  lat_zoom: number;
+  lng_zoom: number;
 
   constructor(
+    private isrealService: IsrealService,
+    private route: ActivatedRoute,
     private location: Location
   ) { }
 
   ngOnInit() {
-    console.log(this.location.path().toString().slice(6));
-    this.tempParam = +this.location.path().toString().slice(6);
-    console.log(this.tempParam);
+    this.isrealService.getMountainDetail(this.route.snapshot.params['index']).subscribe(data => {
+      this.mountainInfo = data;
+      this.lat_zoom = this.mountainInfo.lat_zoom;
+      this.lng_zoom = this.mountainInfo.lng_zoom;
+    });
+
   }
 
   goBack() {
@@ -26,8 +37,8 @@ export class MountainDetailComponent implements OnInit {
   }
 
   // 첫 화면
-  lat: number = 35.803894;
-  lng: number = 128.10762;
+  // lat_zoom: number = 35.803894;
+  // lng_zoom: number = 128.10762;
   zoom: number = 12;
 
   clickedMarker() {

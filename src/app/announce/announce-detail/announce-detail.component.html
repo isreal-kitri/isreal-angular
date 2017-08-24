@@ -7,12 +7,16 @@
 <div class="row align-center">
   <div class="blog-post">
     <div *ngIf="announce">
-      <h3>{{announce.title}} <small>{{announce.date_formatted}}</small></h3>
+      <h3>
+        <img src="../../assets/foundation-icons/svgs/fi-paperclip.svg" height="30" width="30">
+        {{announce.title}}
+        <small>{{announce.date_formatted}}</small>
+      </h3>
       <img class="thumbnail" src="https://placehold.it/850x350">
       <p>{{announce.contents}}</p>
       <div class="callout">
         <ul class="menu simple">
-          <li><a href="#">Author: {{announce.writer}}</a></li>
+          <li><a href="#">Author: "{{announce.writer}}"</a></li>
           <li><a href="#">Comments: {{announce.recommended_num}}</a></li>
         </ul>
       </div>

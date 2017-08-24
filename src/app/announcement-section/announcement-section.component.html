@@ -1,6 +1,9 @@
 <div>
   <div style="text-align: center">
-    <button (click)="gotoDetail()"><a>공지사항</a></button>
+    <button (click)="gotoDetail()">
+      <img src="../../assets/foundation-icons/svgs/fi-clipboard-pencil.svg" height="20" width="20">
+      <a>공지사항</a>
+    </button>
   </div>
 
   <div style="font-size: 13px;">
@@ -16,7 +19,9 @@
       <tbody *ngFor="let element of announces">
         <tr>
           <td>{{element.post_seq}}</td>
-          <td>{{element.title}}</td>
+          <td>
+            <button (click)="DetailAnnounce(element)">{{element.title}}</button>
+          </td>
           <td>{{element.writer}}</td>
           <td>[{{element.hps}}]</td>
         </tr>

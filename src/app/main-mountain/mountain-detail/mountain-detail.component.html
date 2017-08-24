@@ -1,6 +1,6 @@
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
-<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom"
+<agm-map [latitude]="lat_zoom" [longitude]="lng_zoom" [zoom]="zoom"
          [disableDefaultUI]="false"
          [zoomControl]="false" >
 
@@ -64,7 +64,20 @@
 
   </agm-map>
 
-<hr>
+  <br>
+
+  <div *ngIf="mountainInfo">
+      <h4 style="color: #1ea450">
+        <img src="../../assets/foundation-icons/svgs/fi-mountains.svg" height="30" width="20">
+        {{mountainInfo.mount_name}}
+        <img src="../../assets/foundation-icons/svgs/fi-mountains.svg" height="30" width="20">
+      </h4><hr>
+      <b>높이: </b>{{mountainInfo.altitude}}(m)<hr>
+      <b>특징: </b>{{mountainInfo.top100_fm_sel_reason}}<hr>
+      <b>정보: </b>{{mountainInfo.mnt_infor}}<hr>
+      <b>교통: </b>{{mountainInfo.transport}}
+  </div>
+
 <div style="float: right; padding-top: 0px;">
   <button (click)="goBack()">Back</button>
 </div>
